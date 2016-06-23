@@ -1,7 +1,7 @@
 class Counter {
   constructor () {
     this.count = 0
-    this.totalCount = Storage.getData() || 0
+    this.totalCount = Number(Storage.getData()) || 0
   }
 
   getCounts () {
@@ -12,7 +12,7 @@ class Counter {
   }
 
   increase () {
-	  this.count = this.count + 1
+    this.count = this.count + 1
     this.totalCount = this.totalCount + 1
     Storage.add(this.totalCount)
   }
@@ -29,7 +29,7 @@ class Counter {
 }
 
 class Storage {
-  static key() {
+  static key () {
     return 'count'
   }
 
@@ -38,7 +38,7 @@ class Storage {
   }
   
   static getData () {
-	  localStorage.getItem(Storage.key())
+    return localStorage.getItem(Storage.key())
   }
   
   static clear () {
