@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Count up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <section>
+            <h1>現在のカウント</h1>
+            <p>{{count}}</p>
+            <button v-on:click="increase">+1</button>
+            <button v-on:click="reset">リセット</button>
+        </section>
+        <section>
+            <h1>合計のカウント</h1>
+            <p>{{totalCount}}</p>
+            <button v-on:click="allReset">現在と合計のカウントを全てリセット</button>
+        </section>
+    </div>
+</body>
+</html>
