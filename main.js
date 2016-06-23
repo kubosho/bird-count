@@ -20,7 +20,7 @@ class Counter {
   reset () {
     this.count = 0
   }
-  
+
   allReset () {
     this.count = 0
     this.totalCount = 0
@@ -36,11 +36,11 @@ class Storage {
   static add (data) {
     localStorage.setItem(Storage.key(), data)
   }
-  
+
   static getData () {
     return localStorage.getItem(Storage.key())
   }
-  
+
   static clear () {
     localStorage.removeItem(Storage.key())
   }

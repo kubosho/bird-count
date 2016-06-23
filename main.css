@@ -1,0 +1,25 @@
+.button-warning {
+  background-color: #ca3c3c;
+  color: #fff;
+}
+
+.count-button {
+  display: block;
+  margin: 1rem auto;
+}
+
+.counter {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.counter-header {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.count {
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
