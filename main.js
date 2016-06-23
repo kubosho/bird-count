@@ -14,6 +14,7 @@ class Counter {
   increase () {
 	  this.count = this.count + 1
     this.totalCount = this.totalCount + 1
+    Storage.add(this.totalCount)
   }
 
   reset () {
@@ -24,10 +25,6 @@ class Counter {
     this.count = 0
     this.totalCount = 0
     Storage.clear()
-  }
-  
-  save () {
-    Storage.add(this.totalCount)
   }
 }
 
@@ -54,11 +51,7 @@ const app = new Vue({
   el: '#app',
   data: counter.getCounts(),
   methods: {
-    increase: function () {
-      console.log(counter)
-      counter.increase()
-      counter.save()
-    },
+    increase: counter.increase,
     reset: counter.reset,
     allReset: counter.allReset
   }
