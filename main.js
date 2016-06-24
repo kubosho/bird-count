@@ -1,30 +1,20 @@
 class Counter {
   constructor () {
-    this.count = 0
-    this.totalCount = Number(Storage.getData()) || 0
+    this.count = Number(Storage.getData()) || 0
   }
 
-  getCounts () {
-    return {
-      count: this.count,
-      totalCount: this.totalCount
-    }
+  getCount () {
+    return this.count
   }
 
   increase () {
     this.count = this.count + 1
-    this.totalCount = this.totalCount + 1
     ga('send', 'event', 'count', 'click')
-    Storage.add(this.totalCount)
+    Storage.add(this.count)
   }
 
   reset () {
     this.count = 0
-  }
-
-  allReset () {
-    this.count = 0
-    this.totalCount = 0
     Storage.clear()
   }
 }
@@ -50,11 +40,12 @@ class Storage {
 const counter = new Counter()
 const app = new Vue({
   el: '#app',
-  data: counter.getCounts(),
+  data: {
+    count: counter.getCount()
+  },
   methods: {
     increase: counter.increase,
-    reset: counter.reset,
-    allReset: counter.allReset
+    reset: counter.reset
   }
 })
 
