@@ -14,6 +14,7 @@ class Counter {
   increase () {
     this.count = this.count + 1
     this.totalCount = this.totalCount + 1
+    ga('send', 'event', 'count', 'click')
     Storage.add(this.totalCount)
   }
 
